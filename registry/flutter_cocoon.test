@@ -1,0 +1,10 @@
+contact=flutter-infra@google.com
+fetch=git clone https://github.com/flutter/cocoon.git tests
+fetch=git -C tests checkout ea2ea7a40daf04e258355c56add2895d45d206ae
+update=dashboard
+# Runs flutter analyze, flutter test, and builds web platform
+test.posix=./test_utilities/bin/flutter_test_runner.sh dashboard
+
+# Reduce number of iterations because these tests take longer than our recommended maximum
+# but we want to make sure we don't break cocoon since it's our core infrastructure!
+iterations=3
